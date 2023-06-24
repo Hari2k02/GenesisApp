@@ -18,4 +18,15 @@ router.post('/user/feedback', async (req, res) => {
   }
 });
 
+router.post('/user/Servicefeedback', async (req, res) => {
+  //console.log(req.body);
+  try {
+    const {companyName} = req.body;
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 module.exports = router;

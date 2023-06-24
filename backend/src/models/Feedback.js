@@ -1,10 +1,15 @@
 const mongoose = require('mongoose');
 
 const FeedbackSchema = new mongoose.Schema({
-    //_id is the service name
   _id: {
+    companyName:{
     type: String,
     required: true,
+    },
+    serviceName:{
+      type:String,
+      required:true,
+    },
   },
   feedbacks : [
     {
@@ -27,9 +32,6 @@ const FeedbackSchema = new mongoose.Schema({
       }
     }
   ]
-
-
-
   
 });
 
