@@ -48,12 +48,12 @@ router.post('/loginServiceProvider', async (req, res) => {
         }
         else{
             console.log('invalid password');
-            return res.json({ status: 'error', user: 'invalid' });
+            return res.json({ status: 'error', user: 'invalid password' });
         }
     }
     else {
         console.log('invalid username');
-        return res.json({ status: 'error', user: 'invalid' });
+        return res.json({ status: 'error', user: 'invalid username' });
     }
   } catch (error) {
     console.error(error);
