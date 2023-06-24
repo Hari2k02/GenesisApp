@@ -10,6 +10,9 @@ import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
 import Home from './pages/Home';
+import RoleSelectionPage from './pages/RoleSelection';
+import UserRegistration from './pages/UserRegistration';
+import ServiceProviderRegistration from './pages/ServiceProviderRegistration';
 
 // ----------------------------------------------------------------------
 
@@ -33,6 +36,18 @@ export default function Router() {
     {
       path: 'home',
       element: <Home />,
+    },
+    {
+      path: 'roleselection',
+      element: <RoleSelectionPage />,
+    },
+    {
+      path: 'userregistration',
+      element: <UserRegistration />,
+    },
+    {
+      path: 'serviceproviderregistration',
+      element: <ServiceProviderRegistration />,
     },
     {
       element: <SimpleLayout />,
