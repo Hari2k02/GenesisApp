@@ -30,7 +30,11 @@ export default function Router() {
       ],
     },
     {
-      path: 'login',
+      path: 'userlogin',
+      element: <LoginPage />,
+    },
+    {
+      path: 'serviceproviderlogin',
       element: <LoginPage />,
     },
     {
