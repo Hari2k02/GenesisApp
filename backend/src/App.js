@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 //routes
 app.use(require('./routes/register'));
 app.use(require('./routes/login'));
+app.use(require('./routes/user'));
 
 app.listen(PORT, () => {
   console.log(`Server Started at Port ${PORT}`);
