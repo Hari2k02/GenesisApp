@@ -27,7 +27,7 @@ export default function LoginForm() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:1337/loginUser', {
+      const response = await fetch('http://localhost:1337/loginServiceProvider', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
