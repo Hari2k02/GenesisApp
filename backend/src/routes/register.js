@@ -9,10 +9,11 @@ const saltRounds = 10;
 router.post('/registerUser', async (req, res) => {
   console.log(req.body);
   try {
-    const username = 'raghav'
-    const email = 'raghav@gmail.com'
-    const password = '1234'
-    const name = { firstName: "Raghav", lastName: 'Mishra' }
+    // const username = 'raghav'
+    // const email = 'raghav@gmail.com'
+    // const password = '1234'
+    // const name = { firstName: "Raghav", lastName: 'Mishra' }
+    const {username, email, password, name} = req.body;
     // check if the user is already present
     const isPresent = await User.findOne({ _id: username });
     if (isPresent) {
@@ -35,10 +36,11 @@ router.post('/registerUser', async (req, res) => {
 router.post('/registerServiceProvider', async (req, res) => {
   console.log(req.body);
   try {
-    const username = 'windows'
-    const companyName = 'Microsoft'
-    const email = 'microsoft@outlook.com'
-    const password = '1234'
+    // const username = 'windows'
+    // const companyName = 'Microsoft'
+    // const email = 'microsoft@outlook.com'
+    // const password = '1234'
+    const {username, companyName, email, password} = req.body;
     // check if the service Provider is already present
     const isPresent = await ServiceProvider.findOne({ _id: username });
     if (isPresent) {

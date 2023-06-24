@@ -7,7 +7,7 @@ const Service = require(__dirname + '/../models/Service');
 router.post('/user/services', async (req, res) => {
   console.log(req.body);
   try {
-    //const serviceType = 'CyberSecurity';
+    const serviceType = 'CyberSecurity';
     // const serviceType = 'Finance';
     // const serviceType = 'Construction';
     // const serviceType = 'Law';
