@@ -3,8 +3,6 @@ require('dotenv').config();
 var router = express.Router();
 const ServiceProvider = require(__dirname + '/../models/ServiceProvider');
 const Service = require(__dirname + '/../models/Service');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 router.post('/user/services', async (req, res) => {
   console.log(req.body);
