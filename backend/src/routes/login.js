@@ -8,8 +8,9 @@ const ServiceProvider = require(__dirname + '/../models/ServiceProvider');
 router.post('/loginUser', async (req, res) => {
   console.log(req.body);
   try {
-    const username = 'raghav'
-    const password = '1234'
+    // const username = 'raghav'
+    // const password = '1234'
+    const {username, password} = req.body;
     //find user by username and get password
     const pass = await User.findOne({ _id: username }, { password: 1 });
     if (pass) {
@@ -36,8 +37,9 @@ router.post('/loginUser', async (req, res) => {
 router.post('/loginServiceProvider', async (req, res) => {
   console.log(req.body);
   try {
-    const username = 'windows'
-    const password = '1234'
+    // const username = 'windows'
+    // const password = '1234'
+    const {username, password} = req.body;
     //find user by username and get password
     const pass = await ServiceProvider.findOne({ _id: username }, { password: 1 });
     if (pass) {
