@@ -6,27 +6,27 @@ const NavbarResponsive = ({ hamActive }) => {
       <div className={styles.navResInner}>
         <ul className={`${styles.navResLinks}`}>
           <li>
-            <a href="/" className={`${styles.navR} center`}>
+            {/* <a href="/" className={`${styles.navR} center`}>
               Departments
-            </a>
+            </a> */}
           </li>
           <li>
-            <a href="/" className={`${styles.navR} center`}>
+            {/* <a href="/" className={`${styles.navR} center`}>
               More ways to shop
-            </a>
+            </a> */}
           </li>
           <li>
-            <a href="/" className={`${styles.navR} center`}>
+            {/* <a href="/" className={`${styles.navR} center`}>
               Help
-            </a>
+            </a> */}
           </li>
         </ul>
-        <select className={styles.navRdropDown} name="" id="">
+        {/* <select className={styles.navRdropDown} name="" id="">
           <span className="flag-icon flag-icon-us"></span>{" "}
           <option value="US">United States</option>
           <span className="flag-icon flag-icon-in"></span>{" "}
           <option value="IN">India </option>
-        </select>
+        </select> */}
       </div>
     </div>
   );
