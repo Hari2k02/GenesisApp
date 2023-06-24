@@ -64,7 +64,7 @@ const UserRegistration = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        const name = {firstName: firstName, lastName: lastName};
         try {
             const response = await fetch('http://localhost:1337/registerUser', {
                 method: 'POST',
@@ -75,8 +75,7 @@ const UserRegistration = () => {
                     username,
                     email,
                     password,
-                    firstName,
-                    lastName,
+                    name,
                 }),
             });
 

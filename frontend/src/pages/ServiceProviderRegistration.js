@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, TextField, Button, FormControlLabel, Checkbox } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 const StyledHeading = styled(Typography)({
     display: 'flex',
@@ -55,12 +56,33 @@ const ServiceProviderRegistration = () => {
     const handleTermsChecked = (event) => {
         setTermsChecked(event.target.checked);
     };
-
-    const handleSubmit = (event) => {
+    const navigate = useNavigate();
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Handle form submission here
-        // You can perform validation and API calls
-        // to register the user with the provided information
+        try {
+            const response = await fetch('http://localhost:1337/registerServiceProvider', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username,
+                    companyName,
+                    email,
+                    password,
+                }),
+            });
+
+            if (response.ok) {
+                navigate('/login');
+            } else {
+                // Registration failed, handle accordingly (e.g., show error message, etc.)
+                console.error('Registration failed');
+            }
+        } catch (error) {
+            // Handle any other errors that occur during the request
+            console.error(error);
+        }
     };
 
     return (
@@ -102,7 +124,7 @@ const ServiceProviderRegistration = () => {
                     onChange={handleConfirmPasswordChange}
                     required
                 />
-                
+
                 <FormControlLabel
                     control={
                         <Checkbox
