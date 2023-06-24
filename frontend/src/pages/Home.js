@@ -20,10 +20,15 @@ const Home = () => {
         <div className="App">
             <Navbar hamActive={hamActive} setHamActive={setHamActive} />
             <Hero />
+<<<<<<< HEAD
             {/* <Features /> */}
             {/* <Growth /> */}
             {/* <Questions /> */}
             {/* <Programs programs={programs_user} /> */}
+=======
+            <Features />
+            <Growth />
+>>>>>>> 260c276e80bf07d41a593f7807f767140497de74
             <Programs programs={programs_shopper} />
             <Footer />
         </div>

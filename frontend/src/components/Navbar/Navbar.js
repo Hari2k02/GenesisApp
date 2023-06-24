@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ hamActive, setHamActive }) => {
   const logo =
-    "https://d2guulkeunn7d8.cloudfront.net/assets/beetstrap/brand/instacart-logo-color-4db9d81ca0b7638befdc4bd331f64a2633df790c0b55ef627c99b1ba77af72b7.svg";
+    "";
   const handleClick = () => {
     setHamActive(!hamActive);
   };
@@ -21,6 +21,7 @@ const Navbar = ({ hamActive, setHamActive }) => {
           onClick={handleClick}
         >
           <span className={styles.hamburgerLines}></span>
+<<<<<<< HEAD
         </button> */}
         {/* <div className={`${styles.navLeft}`}>
           <img src={logo} alt="logo" className={styles.brand} />
@@ -37,6 +38,14 @@ const Navbar = ({ hamActive, setHamActive }) => {
             <a href="/" className={`${styles.nav} center`}>
               Help
             </a> */}
+=======
+        </button>
+        <div className={`${styles.navLeft}`}>
+          <h1>Genesis</h1>
+        </div>
+        <div className={`${styles.navRight} center`}>
+          <div className={styles.navLinksWrapper}>
+>>>>>>> 260c276e80bf07d41a593f7807f767140497de74
           </div>
           <div>
             <a href="/loginroleselection" className={styles.login}>
