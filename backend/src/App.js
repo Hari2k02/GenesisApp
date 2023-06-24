@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 //app.use(require('./middlewares/auth'));
 //routes
 app.use(require('./routes/register'));
+app.use(require('./routes/login'));
 
 app.listen(PORT, () => {
   console.log(`Server Started at Port ${PORT}`);
