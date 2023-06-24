@@ -17,7 +17,8 @@ router.post('/loginUser', async (req, res) => {
       const passwordMatches = bcrypt.compareSync(password, pass.password);
 
       if (passwordMatches) {
-        return res.json({ status: 'ok', user: 'user' });
+        const userDetails = await User.find({_id: username},{name:1,email:1});
+        return res.json({ status: 'ok', user: 'user',userDetails: userDetails});
       }
       else {
         console.log('invalid password');
@@ -46,7 +47,8 @@ router.post('/loginServiceProvider', async (req, res) => {
       const passwordMatches = bcrypt.compareSync(password, pass.password);
 
       if (passwordMatches) {
-        return res.json({ status: 'ok', user: 'serviceProvider' });
+        const provideDetails = await ServiceProvider.findOne({ _id: username},{companyName:1,email:1});
+        return res.json({ status: 'ok', user: 'serviceProvider',provideDetails:provideDetails });
       }
       else {
         console.log('invalid password');
