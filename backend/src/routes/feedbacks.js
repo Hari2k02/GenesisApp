@@ -8,10 +8,26 @@ const Feedback = require(__dirname + '/../models/Feedback');
 router.post('/user/feedback', async (req, res) => {
   //console.log(req.body);
   try {
-    const {serviceName,feedbacks} = req.body;
-    console.log(req.body);
-    const newFeedback = await Feedback.create({ _id: serviceName,feedbacks:feedbacks});
-    console.log(newFeedback);
+    const {name,feedbacks} = req.body;
+
+    //console.log(feedbacks[0]._id);
+    //console.log(req.body);
+    const checkExist = await Feedback.findOne({_id:name});
+    if(checkExist){
+        const checkUser = await Feedback.findOne({_id:name,feedbacks:{ $elemMatch: { _id: feedbacks[0]._id}}});
+        if(checkUser){
+            const update = await Feedback.updateOne({_id:name,feedbacks:{ $elemMatch: { _id: feedbacks[0]._id}}},{$set:{'feedbacks.$':feedbacks[0]}});
+        }
+        else{
+            const update = await Feedback.updateOne({_id:name},{$push:{feedbacks:feedbacks}});
+        }
+    }
+    else{
+        const newFeedback = await Feedback.create({ _id: name,feedbacks:feedbacks});
+        console.log(newFeedback);
+    }
+    
+    
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: 'Internal server error' });

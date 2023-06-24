@@ -3,7 +3,7 @@ import { growth } from "../../constants/growth";
 import GrowthBox from "./GrowthBox";
 
 const imgURL1 =
-  "https://d2guulkeunn7d8.cloudfront.net/assets/homepage/homepage_stats-538f51946acc9e8a72b982654287ee0ad8d7a848df2cd860935bbc3c2a97e84a.jpg";
+  "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80";
 const imgURL2 =
   "https://d2guulkeunn7d8.cloudfront.net/assets/homepage/homepage_stats_mobile-24bd627084eed46859cb6cf670de84feb1de9ef24909f36cb85db410e57313e8.jpg";
 
@@ -12,7 +12,7 @@ const Growth = () => {
     <div className={`${styles.growthWrapper} center`}>
       <div className={`${styles.growthWrapperInner} center`}>
         <div className={styles.growthHeading}>
-          <p>The world's largest online grocery service</p>
+          <p>Your perfect service finding partner</p>
         </div>
         <div className={styles.growthImg}>
           <img className={styles.img1} src={imgURL1} alt="" />

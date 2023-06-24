@@ -9,15 +9,15 @@ const Hero = () => {
       </select> */}
       <div className={`${styles.heroInner}`}>
         <h2 className={styles.headerText}>
-          Order groceries for delivery or pickup today
+          We are at Your Service
         </h2>
         <div className={styles.slogan}>
-          <p>Whatever you want from local stores, brought right to your door</p>
+          <p>Whatever you want At your doorstep</p>
         </div>
       </div>
       <div className={styles.heroImage}>
         <img
-          src="https://d2d8wwwkmhfcva.cloudfront.net/x856/d2guulkeunn7d8.cloudfront.net/assets/homepage/homepage_background_full_m3_cropped-8d2d286263821da7decd7c61fb1db1eb0e3dec13e0c356277d6d3cb7484c024a.jpg"
+          src="https://cdn.pixabay.com/photo/2015/11/26/16/28/vintage-1064142_1280.png"
           alt=""
         />
       </div>
