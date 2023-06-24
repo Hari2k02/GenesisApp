@@ -39,7 +39,7 @@ const Navbar = ({ hamActive, setHamActive }) => {
             </a> */}
           </div>
           <div>
-            <a href="/login" className={styles.login}>
+            <a href="/loginroleselection" className={styles.login}>
               Log in
             </a>
             <button className={styles.signup} onClick={navigateFunc}>Sign Up</button>
