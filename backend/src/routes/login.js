@@ -12,20 +12,20 @@ router.post('/loginUser', async (req, res) => {
     const password = '1234'
     //find user by username and get password
     const pass = await User.findOne({ _id: username }, { password: 1 });
-    if(pass) {
-        const passwordMatches = bcrypt.compareSync(password, pass.password);
+    if (pass) {
+      const passwordMatches = bcrypt.compareSync(password, pass.password);
 
-        if(passwordMatches) {
-            return res.json({status: 'ok',user:'user'});
-        }
-        else{
-            console.log('invalid password');
-            return res.json({ status: 'error', user: 'invalid password' });
-        }
+      if (passwordMatches) {
+        return res.json({ status: 'ok', user: 'user' });
+      }
+      else {
+        console.log('invalid password');
+        return res.json({ status: 'error', user: 'invalid password' });
+      }
     }
     else {
-        console.log('invalid username');
-        return res.json({ status: 'error', user: 'invalid username' });
+      console.log('invalid username');
+      return res.json({ status: 'error', user: 'invalid username' });
     }
   } catch (error) {
     console.error(error);
@@ -40,20 +40,20 @@ router.post('/loginServiceProvider', async (req, res) => {
     const password = '1234'
     //find user by username and get password
     const pass = await ServiceProvider.findOne({ _id: username }, { password: 1 });
-    if(pass) {
-        const passwordMatches = bcrypt.compareSync(password, pass.password);
+    if (pass) {
+      const passwordMatches = bcrypt.compareSync(password, pass.password);
 
-        if(passwordMatches) {
-            return res.json({status: 'ok',user:'serviceProvider'});
-        }
-        else{
-            console.log('invalid password');
-            return res.json({ status: 'error', user: 'invalid password' });
-        }
+      if (passwordMatches) {
+        return res.json({ status: 'ok', user: 'serviceProvider' });
+      }
+      else {
+        console.log('invalid password');
+        return res.json({ status: 'error', user: 'invalid password' });
+      }
     }
     else {
-        console.log('invalid username');
-        return res.json({ status: 'error', user: 'invalid username' });
+      console.log('invalid username');
+      return res.json({ status: 'error', user: 'invalid username' });
     }
   } catch (error) {
     console.error(error);

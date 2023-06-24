@@ -23,7 +23,7 @@ router.post('/registerUser', async (req, res) => {
       const newUser = await User.create({ _id: username, email: email, password: passwordCrypted, name: name });
       if (newUser) {
         console.log("User created successfully");
-        return newUser;
+        return res.json({status:'ok'});
       }
     }
   } catch (error) {
@@ -49,7 +49,7 @@ router.post('/registerServiceProvider', async (req, res) => {
       const newUser = await ServiceProvider.create({ _id: username, email: email, password: passwordCrypted, companyName: companyName });
       if (newUser) {
         console.log("Service provider created successfully");
-        return newUser;
+        return res.json({status:'ok'});
       }
     }
   } catch (error) {
