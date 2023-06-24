@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ hamActive, setHamActive }) => {
   const logo =
@@ -7,7 +8,11 @@ const Navbar = ({ hamActive, setHamActive }) => {
   const handleClick = () => {
     setHamActive(!hamActive);
   };
+  const navigate = useNavigate();
+  function navigateFunc(){
 
+        navigate('/roleselection');
+  }
   return (
     <nav className={`${styles.navbarWrapper} center`}>
       <div className={`${styles.navbarInner} center`}>
@@ -37,7 +42,7 @@ const Navbar = ({ hamActive, setHamActive }) => {
             <a href="/login" className={styles.login}>
               Log in
             </a>
-            <button className={styles.signup}>Sign Up</button>
+            <button className={styles.signup} onClick={navigateFunc}>Sign Up</button>
           </div>
         </div>
       </div>
